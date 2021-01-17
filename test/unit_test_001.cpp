@@ -72,7 +72,7 @@ unittest(test_enable)
   assertTrue(mp.add(&Serial));
   assertTrue(mp.add(&Serial));
 
-  for (int i = 0; i < mp.count())
+  for (int i = 0; i < mp.count(); i++)
   {
     assertTrue(mp.isEnabled(i));
     mp.disable(i);
