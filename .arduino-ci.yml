@@ -5,5 +5,3 @@ compile:
     - leonardo
     - due
     - zero
-  libraries:
-    - "SoftwareSerial"
