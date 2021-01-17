@@ -4,8 +4,11 @@
 Multiplex	KEYWORD1
 
 # Methods and Functions (KEYWORD2)
+write	KEYWORD2
 add	KEYWORD2
+reset	KEYWORD2
 count	KEYWORD2
+size	KEYWORD2
 enable	KEYWORD2
 disable	KEYWORD2
 isEnabled	KEYWORD2

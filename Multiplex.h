@@ -25,21 +25,21 @@ public:
   
   // CORE
   size_t  write(uint8_t c);
-  bool    add(Stream * stream);  // returns true on success
+  bool    add(Print * stream);  // returns true on success
   void    reset();
 
   // CONTROL
   uint8_t count()       { return _count; };
   uint8_t size()        { return _size; };
-  void    enable(uint8_t n);
-  void    disable(uint8_t n);
-  bool    isEnabled(uint8_t n);
+  void    enable(uint8_t index);
+  void    disable(uint8_t index);
+  bool    isEnabled(uint8_t index);
 
 private:
-  Stream * _stream[MAX_MULTIPLEX];
-  bool    _enabled[MAX_MULTIPLEX];  // bitmask max 8 ...
-  uint8_t _count = 0;
-  uint8_t _size  = 0;
+  Print * _stream[MAX_MULTIPLEX];
+  bool    _enabled[MAX_MULTIPLEX];  // bitmask max 4 ...
+  uint8_t _count;
+  uint8_t _size;
 };
 
 // -- END OF FILE --

@@ -49,8 +49,38 @@ unittest_teardown()
 unittest(test_constructor)
 {
   fprintf(stderr, "VERSION: %s\n", MULTIPLEX_LIB_VERSION);
+
+  Multiplex mp;
+  assertEqual(0, mp.count());
+  assertEqual(4, mp.size());
+
+  assertTrue(mp.add(&Serial));
+  assertTrue(mp.add(&Serial));
+  assertEqual(2, mp.count());
+  assertEqual(4, mp.size());
   
-  assertEqual(1, 1);
+  mp.reset();
+  assertEqual(0, mp.count());
+  assertEqual(4, mp.size());
+}
+
+unittest(test_enable)
+{
+  fprintf(stderr, "VERSION: %s\n", MULTIPLEX_LIB_VERSION);
+
+  Multiplex mp;
+  assertTrue(mp.add(&Serial));
+  assertTrue(mp.add(&Serial));
+
+  for (int i = 0; i < mp.count())
+  {
+    assertTrue(mp.isEnabled(i));
+    mp.disable(i);
+    assertFalse(mp.isEnabled(i));
+    mp.enable(i);
+    assertTrue(mp.isEnabled(i));
+  }
+
 }
 
 unittest_main()

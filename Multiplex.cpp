@@ -22,15 +22,12 @@ Multiplex::Multiplex()
 void Multiplex::reset()
 {
   _size = MAX_MULTIPLEX;
-  for (uint8_t i = 0; i < _size; i++)
-  {
-    _enabled[i] = false;
-  }
+  for (int i = 0; i < _size; i++) _enabled[i] = false;
   _count = 0;
 }
 
 
-bool Multiplex::add(Stream* stream)
+bool Multiplex::add(Print * stream)
 {
   if (_count >= _size) return false;
   _enabled[_count]  = true;
