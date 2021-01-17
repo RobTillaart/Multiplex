@@ -8,12 +8,17 @@
 
 Arduino Library implementing a stream multiplexer.
 
+
 ## Description
 
-To elaborate
+Multiplex is a library in which one can add multiple streams. 
+If one prints to the multiplexer it is sent to all the streams that were added.
+
+It is possible to disable individual streams.
 
 
 ## Interface
+
 
 ### Core
 
@@ -28,10 +33,11 @@ To elaborate
 - **void disable(uint8_t n) ** disable a stream.
 - **bool isEnabled(uint8_t n)** checks if a stream is enabled.
 
+
 ## Future
 
 - bright
-- **free()** but ddifferent name.
+- **free()** but different name.
 
 
 ## Operation
