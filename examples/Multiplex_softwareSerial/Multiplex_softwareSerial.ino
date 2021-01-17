@@ -12,22 +12,22 @@
 Multiplex mp;
 
 // three serial outputs
-SoftwareSerial Serial1(-1, 8);
-SoftwareSerial Serial2(-1, 9);
-SoftwareSerial Serial3(-1, 10);
+SoftwareSerial Serial_A(-1, 8);
+SoftwareSerial Serial_B(-1, 9);
+SoftwareSerial Serial_C(-1, 10);
 
 void setup()
 {
   Serial.begin(115200);
   Serial.println(__FILE__);
 
-  Serial1.begin(19200);
-  Serial2.begin(19200);
-  Serial3.begin(19200);
+  Serial_A.begin(19200);
+  Serial_B.begin(19200);
+  Serial_C.begin(19200);
   
-  mp.add(&Serial1);
-  mp.add(&Serial2);
-  mp.add(&Serial3);
+  mp.add(&Serial_A);
+  mp.add(&Serial_B);
+  mp.add(&Serial_C);
   
   for (int i = 0; i < mp.count(); i++)
   {
