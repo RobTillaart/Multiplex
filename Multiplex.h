@@ -32,14 +32,18 @@ public:
   uint8_t count()       { return _count; };
   uint8_t size()        { return _size; };
   void    enable(uint8_t index);
+  void    enable(Print * stream);
   void    disable(uint8_t index);
+  void    disable(Print * stream);
   bool    isEnabled(uint8_t index);
+  bool    isEnabled(Print * stream);
 
 private:
   Print * _stream[MAX_MULTIPLEX];
   bool    _enabled[MAX_MULTIPLEX];  // bitmask max 4 ...
   uint8_t _count;
   uint8_t _size;
+  uint8_t index(Print *stream);
 };
 
 // -- END OF FILE --

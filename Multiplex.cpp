@@ -53,23 +53,49 @@ size_t Multiplex::write(uint8_t c)
   return n;
 }
 
+// private
+uint8_t Multiplex::index(Print *stream) 
+{
+  uint8_t i = 0;
+  for (; i < _count; i++)
+  {
+    if (stream == _stream[i]) 
+    {
+      return i;
+    }
+  }
+  return i;
+}
 
 void Multiplex::enable(uint8_t n)
 {
   if (n < _count) _enabled[n] = true;
 }
 
+void Multiplex::enable(Print *stream)
+{
+  return enable(index(stream));
+}
 
 void Multiplex::disable(uint8_t n)
 {
   if (n < _count) _enabled[n] = false;
 }
 
+void Multiplex::disable(Print *stream)
+{
+  return disable(index(stream));
+}
 
 bool Multiplex::isEnabled(uint8_t n)
 {
   if (n >= _count) return false;
   return _enabled[n];
+}
+
+bool Multiplex::isEnabled(Print *stream)
+{
+  return isEnabled(index(stream));
 }
 
 // -- END OF FILE --
