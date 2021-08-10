@@ -40,11 +40,11 @@ Returns false if no space left.
 - **uint8_t count()** returns # streams, MAX 4 in initial release
 - **uint8_t size()** returns size which is 4 in the current release.
 - **void enable(uint8_t index)** enable the stream at index.
-- **void enable(Stream * stream)** enable the stream.
+- **void enableStream(Stream * stream)** enable the stream.
 - **void disable(uint8_t index)** disable the stream at index.
-- **void disable(Stream * stream)** disable the stream.
+- **void disableStream(Stream * stream)** disable the stream.
 - **bool isEnabled(uint8_t index)** checks if the stream at index is enabled.
-- **bool isEnabled(Stream * stream)** checks if the stream is enabled.
+- **bool isEnabledStream(Stream * stream)** checks if the stream is enabled.
 
 
 ## Future

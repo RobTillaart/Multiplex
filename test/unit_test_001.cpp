@@ -115,8 +115,8 @@ unittest(test_enable)
     assertTrue(mp.isEnabled(i));
   }
 
-  assertTrue(mp.isEnabled(&stream1));
-  assertTrue(mp.isEnabled(&stream2));
+  assertTrue(mp.isEnabledStream(&stream1));
+  assertTrue(mp.isEnabledStream(&stream2));
 
   mp.disableStream(&stream1);
   mp.disableStream(&stream2);

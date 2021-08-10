@@ -83,7 +83,7 @@ uint8_t Multiplex::index(Print *stream)
 
 void Multiplex::enable(uint8_t n)
 {
-  if (n != 0xFF && n < _count) _enabled[n] = true;
+  if (n < _count && n != 0xFF) _enabled[n] = true;
 }
 
 void Multiplex::enableStream(Print *stream)
