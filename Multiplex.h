@@ -33,11 +33,11 @@ public:
   uint8_t count()       { return _count; };
   uint8_t size()        { return _size; };
   void    enable(uint8_t index);
-  void    enable(Print * stream);
+  void    enableStream(Print * stream);
   void    disable(uint8_t index);
-  void    disable(Print * stream);
+  void    disableStream(Print * stream);
   bool    isEnabled(uint8_t index);
-  bool    isEnabled(Print * stream);
+  bool    isEnabledStream(Print * stream);
 
 private:
   Print * _stream[MAX_MULTIPLEX];

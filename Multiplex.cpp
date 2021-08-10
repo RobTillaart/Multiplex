@@ -30,6 +30,7 @@ void Multiplex::reset()
 
 bool Multiplex::add(Print * stream)
 {
+  if (index(stream) != 0xFF) return false;
   if (_count >= _size) return false;
   _enabled[_count]  = true;
   _stream[_count++] = stream;
@@ -77,36 +78,36 @@ uint8_t Multiplex::index(Print *stream)
       return i;
     }
   }
-  return i;
+  return 0xFF;
 }
 
 void Multiplex::enable(uint8_t n)
 {
-  if (n < _count) _enabled[n] = true;
+  if (n != 0xFF && n < _count) _enabled[n] = true;
 }
 
-void Multiplex::enable(Print *stream)
+void Multiplex::enableStream(Print *stream)
 {
   return enable(index(stream));
 }
 
 void Multiplex::disable(uint8_t n)
 {
-  if (n < _count) _enabled[n] = false;
+  if (n != 0xFF && n < _count) _enabled[n] = false;
 }
 
-void Multiplex::disable(Print *stream)
+void Multiplex::disableStream(Print *stream)
 {
   return disable(index(stream));
 }
 
 bool Multiplex::isEnabled(uint8_t n)
 {
-  if (n >= _count) return false;
+  if (n != 0xFF && n >= _count) return false;
   return _enabled[n];
 }
 
-bool Multiplex::isEnabled(Print *stream)
+bool Multiplex::isEnabledStream(Print *stream)
 {
   return isEnabled(index(stream));
 }
