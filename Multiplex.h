@@ -49,6 +49,7 @@ public:
   bool    isEnabledStream(Print * stream);
 
   uint8_t index(Print *stream);
+  Print * stream(uint8_t index);
 
 
 private:

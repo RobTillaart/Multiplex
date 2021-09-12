@@ -66,6 +66,8 @@ false otherwise.
 - **uint8_t index(Print \*stream)** returns the index of the stream if it was added,
 otherwise it returns 0xFF == 255.  
 Can be used to check if a stream is added the multiplexer.
+- **Print \* stream(uint8_t index)** returns the stream at index or NULL otherwise.
+Convenience function.
 
 
 ## Future

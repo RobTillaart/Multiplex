@@ -9,7 +9,7 @@
 //  HISTORY:
 //  0.1.0   2021-01-09  initial version
 //  0.2.0   2021-08-09  See issues #2 and #3
-//  0.2.1   2021-09-    made index(Stream) public
+//  0.2.1   2021-09-12  made index(Stream) public; added stream(index)
 //                      enable() / disable() return true on success
 //                      added free() function
 //                      minor refactor.
@@ -71,7 +71,8 @@ size_t Multiplex::write(uint8_t c)
 }
 
 
-size_t Multiplex::write(const uint8_t *buffer, size_t size) {
+size_t Multiplex::write(const uint8_t *buffer, size_t size)
+{
   size_t n = 0;
   for (uint8_t i = 0; i < _count; i++)
   {
@@ -94,6 +95,13 @@ uint8_t Multiplex::index(Print *stream)
     }
   }
   return 0xFF;
+}
+
+
+Print * Multiplex::stream(uint8_t n) 
+{
+  if (n >= _count) return NULL;
+  return _stream[n];
 }
 
 
