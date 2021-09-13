@@ -1,5 +1,7 @@
 
 [![Arduino CI](https://github.com/RobTillaart/Multiplex/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
+[![JSON check](https://github.com/RobTillaart/Multiplex/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/RobTillaart/Multiplex/actions/workflows/jsoncheck.yml)
+[![Arduino-lint](https://github.com/RobTillaart/Multiplex/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/RobTillaart/Multiplex/actions/workflows/arduino-lint.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/RobTillaart/Multiplex/blob/master/LICENSE)
 [![GitHub release](https://img.shields.io/github/release/RobTillaart/Multiplex.svg?maxAge=3600)](https://github.com/RobTillaart/Multiplex/releases)
 
