@@ -67,8 +67,11 @@ bool Multiplex::remove(uint8_t idx)
 {
   if (idx >= _count) return false;
   _count--;
-  _stream[idx]  = _stream(_count);
-  _enabled[idx] = _enabled(_count);
+  if (idx != _count)
+  {
+    _stream[idx]  = _stream[_count];
+    _enabled[idx] = _enabled[_count];
+  }
   return true;
 };
 
