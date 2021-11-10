@@ -76,7 +76,7 @@ unittest_teardown()
 
 unittest(test_constructor)
 {
-  fprintf(stderr, "VERSION: %s\n", MULTIPLEX_LIB_VERSION);
+  fprintf(stderr, "VERSION: %s\n", (char *) MULTIPLEX_LIB_VERSION);
 
   Multiplex mp;
   assertEqual(0, mp.count());
@@ -97,7 +97,7 @@ unittest(test_constructor)
 
 unittest(test_enable)
 {
-  fprintf(stderr, "VERSION: %s\n", MULTIPLEX_LIB_VERSION);
+  fprintf(stderr, "VERSION: %s\n", (char *) MULTIPLEX_LIB_VERSION);
 
   Multiplex mp;
   FakeStream stream1(1);

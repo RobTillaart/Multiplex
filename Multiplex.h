@@ -15,7 +15,7 @@
 
 
 #ifndef MAX_MULTIPLEX
-#define MAX_MULTIPLEX       4             // MAX 254 as 0xFF is a special value.
+#define MAX_MULTIPLEX              4    // MAX 254 as 0xFF is a special value.
 #endif
 
 
