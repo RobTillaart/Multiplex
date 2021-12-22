@@ -46,7 +46,7 @@ MAX number is 254 as 255 (0xFF) is used as a flag for **NOT FOUND**.
 
 - **size_t write(uint8_t c)** workhorse of the Print interface. 
 Writes a character to all enabled streams.
-- **size_t write(const uint8_t \*buffer, size_t size)** 
+- **size_t write(const uint8_t \* buffer, size_t size)** 
 Writes a buffer of size characters to all enabled streams.
 - **bool add(Print \* stream)** add another Print stream. 
 Returns false if no space left. 
