@@ -1,7 +1,6 @@
 //
 //    FILE: Multiplex_softwareSerial.ino
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.2.1
 // PURPOSE: demo
 //    DATE: 2021-01-17
 
@@ -28,11 +27,11 @@ void setup()
   Serial_A.begin(19200);
   Serial_B.begin(19200);
   Serial_C.begin(19200);
-  
+
   mp.add(&Serial_A);
   mp.add(&Serial_B);
   mp.add(&Serial_C);
-  
+
   for (int i = 0; i < mp.count(); i++)
   {
     Serial.print("isEnabled ");
@@ -54,7 +53,7 @@ void setup()
     Serial.print(":\t");
     Serial.println(mp.isEnabled(i));
   }
-  
+
   mp.println("\nThis should only print on Serial_A and Serial_C\n");
   mp.println("Done...\n");
 }
@@ -66,3 +65,4 @@ void loop()
 
 
 // -- END OF FILE --
+
