@@ -11,3 +11,4 @@ compile:
     - mega2560
   libraries:
     # - SoftwareSerial   #  werkt niet..
+    - "SD"
