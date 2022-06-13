@@ -16,6 +16,7 @@
 //  0.2.2   2021-09-12  add remove(Stream) + remove(index);
 //  0.2.3   2021-12-22  update library.json, readme, license, minor edits
 //  0.2.4   2022-06-12  add isEnabledAny() to see if writes makes sense.
+//                      keep the streams in adding order when removing a stream.
 //                      add getOutputCount() and resetOutputCount() to
 //                          keep track of bytes multiplexed.
 
@@ -71,10 +72,11 @@ bool Multiplex::remove(uint8_t idx)
 {
   if (idx >= _count) return false;
   _count--;
-  if (idx != _count)
+  while (idx < _count)
   {
-    _stream[idx]  = _stream[_count];
-    _enabled[idx] = _enabled[_count];
+    _stream[idx]  = _stream[idx + 1];
+    _enabled[idx] = _enabled[idx + 1];
+    idx++;
   }
   return true;
 };

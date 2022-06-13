@@ -162,8 +162,6 @@ correctly and returns 0 or less than it should.
 - add more examples.
 - add performance measurement
   - KB / second
-- improve remove by keeping order of streams. 
-  - "all move up one place iso one jump"
 
 
 ### wont
