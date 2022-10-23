@@ -66,8 +66,9 @@ Use the **index(Stream)** to get the actual index of the stream.
 Writes a character to all enabled streams.
 - **size_t write(const uint8_t \* buffer, size_t size)** 
 Writes a buffer of size characters to all enabled streams.
+- **virtual void flush() override** flushes all enabled streams.
 
-With respect to the latter two functions:
+With respect to the two **write()** functions:
 
 The performance will be affected by the number of streams and their performance. 
 One slow stream can hold them all.
