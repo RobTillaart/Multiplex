@@ -49,11 +49,12 @@ If you want to prevent this effect, you should use **reset()** and repopulate th
 
 ### Constructor
 
-- **Multiplex(uint8_t max_multiplex = 4)** constructor, 
-sets the maximum number of streams to 4 by default. 
+- **Multiplex()** constructor, 
+sets the maximum number of streams to MAX_MULTIPLEX == 4 by default. 
 MAX number is 254 as 255 (0xFF) is used as a flag for **NOT FOUND**.
 - **~Multiplex()** destructor
 - **void reset()** resets the count in the multiplexer to zero streams.
+Effectively a remove all.
 
 
 ### Core
@@ -73,7 +74,7 @@ With respect to the two **write()** functions:
 The performance will be affected by the number of streams and their performance. 
 One slow stream can hold them all.
 Note: the different streams will get the data in order of addition,
-and therefore they will get the data on different times. 
+and therefore they will get the data at different times.
 
 
 ### Remove - experimental
@@ -140,7 +141,7 @@ It is kept in the library for now, however it might be removed in the future.
 Footprint is minimal.
 
 - **uint32_t getOutputCount()** returns number of bytes multiplexed.
-So if 6 bytes are sent to 3 streams the byte count is 3 x 6 = 18.
+So if 6 bytes are sent to 3 streams the output byte count is 3 x 6 = 18.
 For diagnostic purpose.
 - **void resetOutputCount()** set internal counter to 0.
 
@@ -152,20 +153,27 @@ See examples
 
 ## Future
 
+#### 0.3.0
+
 - set size in constructor 
   - dynamic memory for all internal arrays
   - breaking change  ==> 0.3.0
 - should **int add()** return the index? Or -1 if fails.
   - usable idea
   - breaking change  ==> 0.3.0
-- add an error flag if one of the streams does not **write()**
+- add **removeAll()** ==> reset()
+
+#### should
+
+- error handling
+  - add an error flag if one of the streams does not **write()**
 correctly and returns 0 or less than it should.
 - add more examples.
 - add performance measurement
   - KB / second
+- move all code to .cpp
 
-
-### wont
+#### wont
 
 - pack enabled flag in one or more bytes. 
   (not much faster + need to encode/decode)

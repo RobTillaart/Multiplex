@@ -31,7 +31,7 @@ public:
   virtual size_t write(uint8_t c) override;
   virtual size_t write(const uint8_t * buffer, size_t size) override;
 
-  bool     add(Print * stream);  // returns true on success
+  bool     add(Print * stream);  //  returns true on success
   void     reset();
 
   //  remove

@@ -15,7 +15,7 @@
 
 Multiplex::Multiplex()
 {
-  // malloc ?
+  //  malloc ?
   _size = MAX_MULTIPLEX;
   reset();
 }
@@ -23,7 +23,7 @@ Multiplex::Multiplex()
 
 Multiplex::~Multiplex()
 {
-  // free ?
+  //  free ?
 }
 
 
@@ -73,7 +73,7 @@ bool Multiplex::remove(uint8_t idx)
 
 ///////////////////////////////////////////
 //
-// WRITE - the core
+//  WRITE - the core
 //
 size_t Multiplex::write(uint8_t c)
 {
